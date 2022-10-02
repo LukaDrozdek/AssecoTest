@@ -1,0 +1,97 @@
+﻿@model AssecoTest.Models.UserInformation
+
+@{
+    ViewData["Title"] = Model.Id == 0 ? "Create User" : "Edit User";
+}
+ 
+<h1>@ViewData["Title"]</h1>
+
+<h4>UserInformation</h4>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddOrEditPost">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Street" class="control-label"></label>
+                <input asp-for="Street" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Suite" class="control-label"></label>
+                <input asp-for="Suite" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Zipcode" class="control-label"></label>
+                <input asp-for="Zipcode" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Lat" class="control-label"></label>
+                <input asp-for="Lat" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Lng" class="control-label"></label>
+                <input asp-for="Lng" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Website" class="control-label"></label>
+                <input asp-for="Website" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyCatchPhrase" class="control-label"></label>
+                <input asp-for="CompanyCatchPhrase" class="form-control" />
+
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Bs" class="control-label"></label>
+                <input asp-for="Bs" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
